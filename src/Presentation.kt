@@ -9,6 +9,13 @@ condition("Hunter",24)
     println(ochiengs.birthYear(2021))
     ochiengs.movingOut()
     ochiengs.aboutMe()
+    //objects from inherited classes
+    var animal = Invertabrates("frog","swamp")
+    animal.noBackbone()
+    animal.classification()
+    var animals = Vertabrates("humans","houses")
+    animals.backbone()
+    animals.classification()
 }
 //Using conditions with operators
 fun condition (name:String,age:Int){
@@ -54,5 +61,21 @@ class FamilyMembers (var intro:String,var ages:Int, var occupation:String,var ge
     }
     fun aboutMe(){
         println("I am $intro aged $ages years old. Currently, I am a $occupation." )
+    }
+}
+// class inheritance
+open class Animals(var name:String,var habitat:String){
+    fun classification (){
+        println("Kingdom animalia")
+    }
+}
+class Invertabrates (name:String, habitat:String):Animals(name,habitat){
+    fun noBackbone(){
+        println("I am an animal without a skeletal system")
+    }
+}
+class Vertabrates (name:String,habitat:String):Animals(name,habitat){
+    fun backbone(){
+        println("$name are beautiful")
     }
 }
